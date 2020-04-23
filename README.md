@@ -58,3 +58,7 @@ Optional<String> token = handler.encode(userObject);
 Optional<User> user = handler.decode(token);
 // do something with the user
 ```
+## Credits
+*   Dropwizard - [GitHub](https://github.com/dropwizard/dropwizard)
+*   Auth0 Java Jwt - [GitHub](https://github.com/auth0/java-jwt)
+*   Lombok - [GitHub](https://github.com/rzwitserloot/lombok)
