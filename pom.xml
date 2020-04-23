@@ -11,6 +11,7 @@
 
     <properties>
         <dropwizard.version>2.0.8</dropwizard.version>
+        <jackson.databind.version>2.10.3</jackson.databind.version>
         <auth0.java.jwt.version>3.10.2</auth0.java.jwt.version>
         <lombok.version>1.18.12</lombok.version>
     </properties>
@@ -39,9 +40,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.databind.version}</version>
             <scope>provided</scope>
         </dependency>
 
@@ -49,6 +50,13 @@
             <groupId>com.auth0</groupId>
             <artifactId>java-jwt</artifactId>
             <version>${auth0.java.jwt.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
         </dependency>
 
     </dependencies>
