@@ -10,19 +10,19 @@ import java.util.Optional;
 
 public class JwtAuthenticator<T extends Principal & Serializable> implements Authenticator<String, T> {
 
-    private final JwtDecoder<T> decoder;
+    private final JwtHandler<T> handler;
 
-    public JwtAuthenticator(final JwtDecoder<T> decoder) {
-        this.decoder = Objects.requireNonNull(decoder);
+    public JwtAuthenticator(final JwtHandler<T> handler) {
+        this.handler = Objects.requireNonNull(handler);
     }
 
     @Override
     public Optional<T> authenticate(String token) throws AuthenticationException {
-        return decoder.decode(token);
+        return handler.decode(token);
     }
 
-    public JwtDecoder<T> getJwtDecoder() {
-        return decoder;
+    public JwtHandler<T> getJwtHandler() {
+        return handler;
     }
 
 }
