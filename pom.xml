@@ -16,13 +16,30 @@
         <lombok.version>1.18.12</lombok.version>
     </properties>
 
+    <name>dropwizard-auth-jwt</name>
+    <description>A simple to use dropwizard jwt auth library</description>
     <url>https://github.com/Mambabosso/dropwizard-auth-jwt</url>
 
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Mambabosso</name>
+            <email>mambabosso@gmail.com</email>
+            <organization>com.github.mambabosso</organization>
+            <organizationUrl>https://github.com/Mambabosso</organizationUrl>
+        </developer>
+    </developers>
+
     <scm>
-        <connection>scm:git:https://github.com/Mambabosso/dropwizard-auth-jwt</connection>
-        <developerConnection>scm:git:git@github.com:Mambabosso/dropwizard-auth-jwt.git</developerConnection>
+        <connection>scm:git:git://github.com/mambabosso/dropwizard-auth-jwt.git</connection>
+        <developerConnection>scm:git:ssh://github.com:mambabosso/dropwizard-auth-jwt.git</developerConnection>
         <url>https://github.com/Mambabosso/dropwizard-auth-jwt</url>
-        <tag>HEAD</tag>
     </scm>
 
     <issueManagement>
@@ -61,10 +78,29 @@
 
     </dependencies>
 
+    <distributionManagement>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
     <build>
 
         <pluginManagement>
             <plugins>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>3.2.1</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>3.2.0</version>
+                </plugin>
 
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -79,6 +115,12 @@
                 </plugin>
 
                 <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>1.6.8</version>
+                </plugin>
+
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
                     <version>1.6</version>
@@ -88,6 +130,32 @@
         </pluginManagement>
 
         <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -128,6 +196,17 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
             </plugin>
 
             <plugin>
