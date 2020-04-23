@@ -1,6 +1,7 @@
 package com.github.mambabosso.dropwizard.auth.jwt;
 
 import io.dropwizard.util.Duration;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,6 +13,7 @@ import java.util.Date;
  * A basic configuration for JWT
  */
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 @Builder
 public class JwtConfiguration {
