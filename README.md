@@ -1,5 +1,12 @@
 # dropwizard-auth-jwt
-
+## Maven
+```xml
+<dependency>
+    <groupId>com.github.mambabosso</groupId>
+    <artifactId>dropwizard-auth-jwt</artifactId>
+    <version>1.1</version>
+</dependency>
+```
 ## Getting started
 ### Configuration
 ```java
