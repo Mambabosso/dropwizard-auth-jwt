@@ -1,0 +1,9 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
+
+jwt:
+  issuer: example
+  secret: 123456
+  lifetime: '5 minutes'

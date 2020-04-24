@@ -70,4 +70,9 @@ public class JwtConfiguration {
         return issuedAt;
     }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
 }
