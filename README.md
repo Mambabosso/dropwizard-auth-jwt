@@ -8,6 +8,8 @@
 </dependency>
 ```
 ## Getting started
+### Example
+Example Code - [Link](https://github.com/Mambabosso/dropwizard-auth-jwt/tree/master/src/example)
 ### Configuration
 ```java
 @Valid
