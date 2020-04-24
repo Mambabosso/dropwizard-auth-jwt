@@ -1,5 +1,12 @@
 # dropwizard-auth-jwt
-
+## Maven
+```xml
+<dependency>
+    <groupId>com.github.mambabosso</groupId>
+    <artifactId>dropwizard-auth-jwt</artifactId>
+    <version>1.1</version>
+</dependency>
+```
 ## Getting started
 ### Configuration
 ```java
@@ -41,5 +48,6 @@ Optional<User> user = authenticator.getJwtHandler().decode(token);
 ```
 ## Credits
 *   Dropwizard - [GitHub](https://github.com/dropwizard/dropwizard)
+*   FasterXML Jackson - [GitHub](https://github.com/FasterXML/jackson)
 *   Auth0 Java Jwt - [GitHub](https://github.com/auth0/java-jwt)
 *   Lombok - [GitHub](https://github.com/rzwitserloot/lombok)
