@@ -11,7 +11,7 @@
 
     <properties>
         <dropwizard.version>2.0.8</dropwizard.version>
-        <jackson.databind.version>2.10.3</jackson.databind.version>
+        <jackson.databind.version>2.12.6.1</jackson.databind.version>
         <auth0.java.jwt.version>3.10.2</auth0.java.jwt.version>
         <lombok.version>1.18.12</lombok.version>
     </properties>
